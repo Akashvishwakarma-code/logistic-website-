@@ -951,11 +951,11 @@
     <!-- Our Story & Timeline -->
     <section class="our-story">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title fade-up">
           <h2>Our Journey</h2>
         </div>
 
-        <div class="story-content">
+        <div class="fade-up story-content">
           <p>
             Founded with a vision to fix the inefficiencies in traditional
             trucking, Vayuraaj began by partnering directly with drivers and
@@ -968,7 +968,7 @@
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-year">2015</div>
-            <div class="timeline-content">
+            <div class="timeline-content fade-up">
               <h3>The First Green Mile</h3>
               <p>
                 Our founding team hit the road with a small fleet of
@@ -980,7 +980,7 @@
 
           <div class="timeline-item">
             <div class="timeline-year">2017</div>
-            <div class="timeline-content">
+            <div class="timeline-content fade-up">
               <h3>Technology Integration</h3>
               <p>
                 Launched our proprietary platform for real-time freight matching
@@ -992,7 +992,7 @@
 
           <div class="timeline-item">
             <div class="timeline-year">2020</div>
-            <div class="timeline-content">
+            <div class="timeline-content fade-up">
               <h3>Expansion & Recognition</h3>
               <p>
                 Expanded services to cover 48 states and received the "Green
@@ -1003,7 +1003,7 @@
 
           <div class="timeline-item">
             <div class="timeline-year">2023</div>
-            <div class="timeline-content">
+            <div class="timeline-content fade-up">
               <h3>The Sustainable Fleet</h3>
               <p>
                 Achieved a major milestone with over 70% of our fleet comprising
@@ -1027,7 +1027,7 @@
         </div>
 
         <div class="values-grid">
-          <div class="value-card">
+          <div class="value-card zoom-in">
             <div class="value-icon">
               <i class="fas fa-handshake"></i>
             </div>
@@ -1040,7 +1040,7 @@
           </div>
 
           <div class="value-card">
-            <div class="value-icon">
+            <div class="value-icon zoom-in">
               <i class="fas fa-leaf"></i>
             </div>
             <h3>Sustainability in Action</h3>
@@ -1052,7 +1052,7 @@
           </div>
 
           <div class="value-card">
-            <div class="value-icon">
+            <div class="value-icon zoom-in">
               <i class="fas fa-rocket"></i>
             </div>
             <h3>Driven by Innovation</h3>
@@ -1068,7 +1068,7 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-      <div class="container">
+      <div class="container zoom-in">
         <h2>Join Our Green Journey</h2>
         <p>
           Whether you're a shipper looking for reliable, eco-conscious transport
@@ -1178,3 +1178,115 @@
     </script>
   </body>
 </html>
+
+<!-- styles for scroll effects  -->
+<style>
+  /* ===== SCROLL ANIMATIONS ===== */
+  .fade-up,
+  .slide-left,
+  .slide-right,
+  .zoom-in,
+  .blur-in,
+  .rotate-in {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Specific transformations */
+  .fade-up {
+    transform: translateY(40px);
+  }
+  .slide-left {
+    transform: translateX(-60px);
+  }
+  .slide-right {
+    transform: translateX(60px);
+  }
+  .zoom-in {
+    transform: scale(0.9);
+  }
+  .blur-in {
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  .rotate-in {
+    transform: rotate(-3deg) scale(0.95);
+  }
+
+  /* Active state when element is in viewport */
+  .fade-up.show,
+  .slide-left.show,
+  .slide-right.show,
+  .zoom-in.show,
+  .blur-in.show,
+  .rotate-in.show {
+    opacity: 1;
+    transform: translate(0) scale(1) rotate(0);
+    filter: blur(0);
+  }
+
+  /* Optional: Different animation speeds */
+  .fast {
+    transition-duration: 0.5s;
+  }
+  .slow {
+    transition-duration: 1.2s;
+  }
+</style>
+<script>
+  // Scroll Animation Handler
+  const scrollAnimations = () => {
+    // Create observer with options
+    const observerOptions = {
+      root: null, // Use viewport as root
+      rootMargin: "0px 0px -100px 0px", // Trigger slightly before element is in center
+      threshold: 0.1, // Trigger when 10% of element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add show class to trigger animation
+          entry.target.classList.add("show");
+
+          // Optional: Stop observing after animation triggers
+          // observer.unobserve(entry.target);
+        } else {
+          // Optional: Remove class when element leaves viewport
+          // entry.target.classList.remove('show');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll(
+      ".fade-up, .slide-left, .slide-right, .zoom-in, .blur-in, .rotate-in, .stagger-container",
+    );
+
+    animatedElements.forEach((el) => observer.observe(el));
+
+    // Special handling for staggered containers
+    const staggerObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add show class to container
+          entry.target.classList.add("show");
+
+          // Then add show class to children with delays
+          const children = entry.target.children;
+          Array.from(children).forEach((child, index) => {
+            setTimeout(() => {
+              child.classList.add("show");
+            }, index * 150); // 150ms delay between each child
+          });
+        }
+      });
+    }, observerOptions);
+
+    const staggerContainers = document.querySelectorAll(".stagger-container");
+    staggerContainers.forEach((el) => staggerObserver.observe(el));
+  };
+
+  // Initialize when page loads
+  document.addEventListener("DOMContentLoaded", scrollAnimations);
+</script>
