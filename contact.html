@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Vayuraaj Logistics for eco-friendly transportation solutions. Get a quote or send us a message."
+    />
+    <title>Contact Us | Vayuraaj Logistics</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="./css/contact.css" />
+
+    <!-- Page Specific Styles -->
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="container header-container">
+        <div class="logo-container">
+          <div class="logo">
+            <img src="image.png" alt="Vayuraaj Logistics Logo" />
+          </div>
+          <div class="logo-text"><span>vayuraaj</span> Logistics</div>
+        </div>
+
+        <div class="nav-container">
+          <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+
+            <div class="dropdown">
+              <div class="dropdown-toggle">
+                <a href="services.html"
+                  >Services <i class="fas fa-chevron-down"></i
+                ></a>
+              </div>
+              <div class="dropdown-menu">
+                <a href="services.html">All Services</a>
+                <a href="services.html#freight">Freight Services</a>
+                <a href="services.html#transport">Transport Services</a>
+                <a href="services.html#logistics">Logistics Services</a>
+              </div>
+            </div>
+
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html" class="active">Contact</a>
+          </nav>
+
+          <a href="contact.html#get-quote" class="btn">Get Quote</a>
+
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="page-hero contact-hero">
+      <div class="container">
+        <h1 class="fade-up">Get In Touch</h1>
+        <p class="fade-up slow">
+          We're here to help with all your logistics needs. Choose the option
+          that works best for you.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Intro -->
+    <section class="mission-statement">
+      <div class="container">
+        <h2 class="fade-up">How Can We Help You?</h2>
+        <p class="lead-text fade-up">Two ways to connect with us</p>
+        <p class="sub-text fade-up slow">
+          Need a quick quote for your shipment? Use the Get Quote form. Have
+          general questions or feedback? Use the Contact Us form. We'll respond
+          within 24 hours.
+        </p>
+      </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section class="our-story" id="get-quote">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="fade-up">Choose Your Option</h2>
+        </div>
+
+        <div class="forms-container">
+          <!-- Get Quote Form -->
+          <div class="form-card fade-up" id="quote-form">
+            <div class="form-header quote-header">
+              <i class="fas fa-file-invoice"></i>
+              <h2>Get a Quote</h2>
+              <p>Fast, free, and no obligation</p>
+            </div>
+            <div class="form-body">
+              <div class="success-message" id="quoteSuccess">
+                <i class="fas fa-check-circle"></i>
+                Thank you! We'll send your quote within 2 hours.
+              </div>
+              <form id="quoteForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label><i class="fas fa-user"></i> First Name *</label>
+                    <input
+                      type="text"
+                      id="quoteFirstName"
+                      placeholder="John"
+                      required
+                    />
+                    <div class="error-message" id="quoteFirstNameError">
+                      First name is required
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label><i class="fas fa-user"></i> Last Name *</label>
+                    <input
+                      type="text"
+                      id="quoteLastName"
+                      placeholder="Doe"
+                      required
+                    />
+                    <div class="error-message" id="quoteLastNameError">
+                      Last name is required
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label><i class="fas fa-envelope"></i> Email *</label>
+                  <input
+                    type="email"
+                    id="quoteEmail"
+                    placeholder="john.doe@example.com"
+                    required
+                  />
+                  <div class="error-message" id="quoteEmailError">
+                    Valid email is required
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label><i class="fas fa-phone"></i> Phone *</label>
+                  <input
+                    type="tel"
+                    id="quotePhone"
+                    placeholder="(555) 123-4567"
+                    required
+                  />
+                  <div class="error-message" id="quotePhoneError">
+                    Phone number is required
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label
+                      ><i class="fas fa-map-marker-alt"></i> Pickup Location
+                      *</label
+                    >
+                    <input
+                      type="text"
+                      id="pickupLocation"
+                      placeholder="City, State"
+                      required
+                    />
+                    <div class="error-message" id="pickupError">
+                      Pickup location is required
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label
+                      ><i class="fas fa-map-marker-alt"></i> Delivery Location
+                      *</label
+                    >
+                    <input
+                      type="text"
+                      id="deliveryLocation"
+                      placeholder="City, State"
+                      required
+                    />
+                    <div class="error-message" id="deliveryError">
+                      Delivery location is required
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label><i class="fas fa-weight"></i> Weight (lbs) *</label>
+                    <input
+                      type="number"
+                      id="weight"
+                      placeholder="e.g., 5000"
+                      min="1"
+                      required
+                    />
+                    <div class="error-message" id="weightError">
+                      Weight is required
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label><i class="fas fa-cube"></i> Dimensions (ft)</label>
+                    <input
+                      type="text"
+                      id="dimensions"
+                      placeholder="L x W x H"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label><i class="fas fa-truck"></i> Shipment Type *</label>
+                  <select id="shipmentType" required>
+                    <option value="">Select type</option>
+                    <option value="ftl">Full Truckload (FTL)</option>
+                    <option value="ltl">Less than Truckload (LTL)</option>
+                    <option value="expedited">Expedited</option>
+                    <option value="hazmat">Hazardous Materials</option>
+                    <option value="refrigerated">Refrigerated</option>
+                  </select>
+                  <div class="error-message" id="shipmentTypeError">
+                    Please select shipment type
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label
+                    ><i class="fas fa-calendar"></i> Preferred Pickup Date
+                    *</label
+                  >
+                  <input type="date" id="pickupDate" required />
+                  <div class="error-message" id="dateError">
+                    Please select a date
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label
+                    ><i class="fas fa-comment"></i> Additional Details</label
+                  >
+                  <textarea
+                    id="quoteDetails"
+                    placeholder="Any special requirements?"
+                  ></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="quoteTerms" required />
+                  <label for="quoteTerms"
+                    >I agree to the
+                    <a href="#">terms and conditions</a> *</label
+                  >
+                </div>
+                <div class="error-message" id="quoteTermsError">
+                  You must agree to terms
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn form-submit quote-submit"
+                  id="quoteSubmitBtn"
+                >
+                  <i class="fas fa-calculator"></i> Get My Quote
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Contact Us Form -->
+          <div class="form-card fade-up" id="contact-form">
+            <div class="form-header contact-header">
+              <i class="fas fa-headset"></i>
+              <h2>Contact Us</h2>
+              <p>General inquiries & support</p>
+            </div>
+            <div class="form-body">
+              <div class="success-message" id="contactSuccess">
+                <i class="fas fa-check-circle"></i>
+                Message sent! We'll get back to you soon.
+              </div>
+              <form id="contactForm">
+                <div class="form-group">
+                  <label><i class="fas fa-user"></i> Full Name *</label>
+                  <input
+                    type="text"
+                    id="contactName"
+                    placeholder="John Doe"
+                    required
+                  />
+                  <div class="error-message" id="contactNameError">
+                    Name is required
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> Email *</label>
+                    <input
+                      type="email"
+                      id="contactEmail"
+                      placeholder="john@example.com"
+                      required
+                    />
+                    <div class="error-message" id="contactEmailError">
+                      Valid email is required
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label><i class="fas fa-phone"></i> Phone</label>
+                    <input
+                      type="tel"
+                      id="contactPhone"
+                      placeholder="(555) 123-4567"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label><i class="fas fa-tag"></i> Subject *</label>
+                  <select id="contactSubject" required>
+                    <option value="">Select subject</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Customer Support</option>
+                    <option value="partnership">Partnership Opportunity</option>
+                    <option value="careers">Careers</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <div class="error-message" id="contactSubjectError">
+                    Please select a subject
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label><i class="fas fa-comment"></i> Message *</label>
+                  <textarea
+                    id="contactMessage"
+                    placeholder="How can we help you?"
+                    required
+                  ></textarea>
+                  <div class="error-message" id="contactMessageError">
+                    Message is required
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label><i class="fas fa-paperclip"></i> Attachment</label>
+                  <input
+                    type="file"
+                    id="attachment"
+                    accept=".pdf,.doc,.docx,.jpg,.png"
+                  />
+                  <small style="color: var(--gray)"
+                    >Max size: 5MB (PDF, DOC, JPG, PNG)</small
+                  >
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="newsletter" checked />
+                  <label for="newsletter">Subscribe to our newsletter</label>
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="contactTerms" required />
+                  <label for="contactTerms"
+                    >I agree to the <a href="#">privacy policy</a> *</label
+                  >
+                </div>
+                <div class="error-message" id="contactTermsError">
+                  You must agree to privacy policy
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn form-submit contact-submit"
+                  id="contactSubmitBtn"
+                >
+                  <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Information Cards -->
+    <section class="contact-info-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="fade-up">Other Ways to Reach Us</h2>
+          <p class="fade-up">
+            Choose the method that's most convenient for you
+          </p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card zoom-in">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Visit Us</h3>
+            <p>
+              456 Greenway Drive<br />Eco Business Park<br />Chicago, IL 60601
+            </p>
+            <a href="#map">View Map <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <div class="info-card zoom-in">
+            <div class="info-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Call Us</h3>
+            <p>
+              Main: +1 (888) 555-GREEN<br />Support: +1 (888) 555-HELP<br />24/7
+              Emergency: +1 (888) 555-911
+            </p>
+            <a href="tel:+18885554733"
+              >Call Now <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <div class="info-card zoom-in">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email Us</h3>
+            <p>
+              General: info@vayuraaj.com<br />Sales: sales@vayuraaj.com<br />Support:
+              help@vayuraaj.com
+            </p>
+            <a href="mailto:info@vayuraaj.com"
+              >Send Email <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <div class="info-card zoom-in">
+            <div class="info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Business Hours</h3>
+            <p>
+              Mon-Fri: 8:00 AM - 8:00 PM<br />Saturday: 9:00 AM - 5:00 PM<br />Sunday:
+              Closed (Emergency Only)
+            </p>
+            <a href="#faq">FAQ <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.408285733552!2d-87.62979818456048!3d41.87811387922098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ca8d59b9e81%3A0x5f6c5d8c9b3d5c0!2sChicago%2C%20IL!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="fade-up">Frequently Asked Questions</h2>
+          <p class="fade-up">Quick answers to common questions</p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item fade-up">
+            <h3><i class="fas fa-clock"></i> How quickly can I get a quote?</h3>
+            <p>
+              We provide initial quotes within 2 hours during business hours.
+              For immediate assistance, call our hotline.
+            </p>
+          </div>
+
+          <div class="faq-item fade-up">
+            <h3><i class="fas fa-truck"></i> What areas do you serve?</h3>
+            <p>
+              We serve all 48 contiguous states with our fleet. International
+              shipping is available through our partners.
+            </p>
+          </div>
+
+          <div class="faq-item fade-up">
+            <h3>
+              <i class="fas fa-file-contract"></i> Do you have minimum shipment
+              requirements?
+            </h3>
+            <p>
+              No minimum! We handle shipments of all sizes, from small packages
+              to full truckloads.
+            </p>
+          </div>
+
+          <div class="faq-item fade-up">
+            <h3><i class="fas fa-leaf"></i> Are you really eco-friendly?</h3>
+            <p>
+              Yes! 70% of our fleet is electric or hybrid, and we offset all
+              carbon emissions from our operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="zoom-in">Ready to Ship?</h2>
+        <p class="zoom-in slow">
+          Get your free quote in minutes and experience eco-friendly logistics
+        </p>
+        <a href="#get-quote" class="btn zoom-in">Get Quote Now</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="logo">
+              <div class="logo-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <div class="logo-text"><span>vayuraaj</span> Logistics</div>
+            </div>
+            <p>
+              Leading the way in sustainable logistics solutions across North
+              America. Your trusted partner for reliable, eco-friendly
+              transportation.
+            </p>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Career Opportunities</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span
+                  >456 Greenway Drive, Eco Business Park, Chicago, IL
+                  60601</span
+                >
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <span>+1 (888) 555-GREEN</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>info@vayuraajlogistics.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            &copy; 2023 Vayuraaj Logistics. All Rights Reserved. |
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Form Validation and Submission JavaScript -->
+    <script>
+      <!-- Add this before your existing script -->
+
+      // Scroll Animation Handler
+      document.addEventListener("DOMContentLoaded", function () {
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px 0px -100px 0px",
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        }, observerOptions);
+
+        const animatedElements = document.querySelectorAll(
+          ".fade-up, .slide-left, .slide-right, .zoom-in, .blur-in, .rotate-in",
+        );
+        animatedElements.forEach((el) => observer.observe(el));
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // ===== Form Validation Functions =====
+        function validateEmail(email) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function validatePhone(phone) {
+          return /^[\d\s\-\(\)]+$/.test(phone);
+        }
+
+        function showError(inputId, errorId, show, message) {
+          const input = document.getElementById(inputId);
+          const error = document.getElementById(errorId);
+          if (show) {
+            input.classList.add("error");
+            error.classList.add("show");
+            if (message) error.textContent = message;
+          } else {
+            input.classList.remove("error");
+            error.classList.remove("show");
+          }
+        }
+
+        // ===== Get Quote Form Validation =====
+        const quoteForm = document.getElementById("quoteForm");
+        if (quoteForm) {
+          quoteForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Validate first name
+            const firstName = document
+              .getElementById("quoteFirstName")
+              .value.trim();
+            if (!firstName) {
+              showError("quoteFirstName", "quoteFirstNameError", true);
+              isValid = false;
+            } else {
+              showError("quoteFirstName", "quoteFirstNameError", false);
+            }
+
+            // Validate last name
+            const lastName = document
+              .getElementById("quoteLastName")
+              .value.trim();
+            if (!lastName) {
+              showError("quoteLastName", "quoteLastNameError", true);
+              isValid = false;
+            } else {
+              showError("quoteLastName", "quoteLastNameError", false);
+            }
+
+            // Validate email
+            const email = document.getElementById("quoteEmail").value.trim();
+            if (!email || !validateEmail(email)) {
+              showError(
+                "quoteEmail",
+                "quoteEmailError",
+                true,
+                "Valid email is required",
+              );
+              isValid = false;
+            } else {
+              showError("quoteEmail", "quoteEmailError", false);
+            }
+
+            // Validate phone
+            const phone = document.getElementById("quotePhone").value.trim();
+            if (!phone) {
+              showError("quotePhone", "quotePhoneError", true);
+              isValid = false;
+            } else {
+              showError("quotePhone", "quotePhoneError", false);
+            }
+
+            // Validate pickup location
+            const pickup = document
+              .getElementById("pickupLocation")
+              .value.trim();
+            if (!pickup) {
+              showError("pickupLocation", "pickupError", true);
+              isValid = false;
+            } else {
+              showError("pickupLocation", "pickupError", false);
+            }
+
+            // Validate delivery location
+            const delivery = document
+              .getElementById("deliveryLocation")
+              .value.trim();
+            if (!delivery) {
+              showError("deliveryLocation", "deliveryError", true);
+              isValid = false;
+            } else {
+              showError("deliveryLocation", "deliveryError", false);
+            }
+
+            // Validate weight
+            const weight = document.getElementById("weight").value;
+            if (!weight || weight <= 0) {
+              showError(
+                "weight",
+                "weightError",
+                true,
+                "Valid weight is required",
+              );
+              isValid = false;
+            } else {
+              showError("weight", "weightError", false);
+            }
+
+            // Validate shipment type
+            const shipmentType = document.getElementById("shipmentType").value;
+            if (!shipmentType) {
+              showError("shipmentType", "shipmentTypeError", true);
+              isValid = false;
+            } else {
+              showError("shipmentType", "shipmentTypeError", false);
+            }
+
+            // Validate date
+            const date = document.getElementById("pickupDate").value;
+            if (!date) {
+              showError("pickupDate", "dateError", true);
+              isValid = false;
+            } else {
+              showError("pickupDate", "dateError", false);
+            }
+
+            // Validate terms
+            const terms = document.getElementById("quoteTerms").checked;
+            if (!terms) {
+              document.getElementById("quoteTermsError").classList.add("show");
+              isValid = false;
+            } else {
+              document
+                .getElementById("quoteTermsError")
+                .classList.remove("show");
+            }
+
+            // If valid, show success message and reset form
+            if (isValid) {
+              const submitBtn = document.getElementById("quoteSubmitBtn");
+              submitBtn.classList.add("loading");
+
+              // Simulate API call
+              setTimeout(() => {
+                submitBtn.classList.remove("loading");
+                document.getElementById("quoteSuccess").classList.add("show");
+                quoteForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                  document
+                    .getElementById("quoteSuccess")
+                    .classList.remove("show");
+                }, 5000);
+              }, 1500);
+            }
+          });
+        }
+
+        // ===== Contact Form Validation =====
+        const contactForm = document.getElementById("contactForm");
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Validate name
+            const name = document.getElementById("contactName").value.trim();
+            if (!name) {
+              showError("contactName", "contactNameError", true);
+              isValid = false;
+            } else {
+              showError("contactName", "contactNameError", false);
+            }
+
+            // Validate email
+            const email = document.getElementById("contactEmail").value.trim();
+            if (!email || !validateEmail(email)) {
+              showError(
+                "contactEmail",
+                "contactEmailError",
+                true,
+                "Valid email is required",
+              );
+              isValid = false;
+            } else {
+              showError("contactEmail", "contactEmailError", false);
+            }
+
+            // Validate subject
+            const subject = document.getElementById("contactSubject").value;
+            if (!subject) {
+              showError("contactSubject", "contactSubjectError", true);
+              isValid = false;
+            } else {
+              showError("contactSubject", "contactSubjectError", false);
+            }
+
+            // Validate message
+            const message = document
+              .getElementById("contactMessage")
+              .value.trim();
+            if (!message) {
+              showError("contactMessage", "contactMessageError", true);
+              isValid = false;
+            } else {
+              showError("contactMessage", "contactMessageError", false);
+            }
+
+            // Validate terms
+            const terms = document.getElementById("contactTerms").checked;
+            if (!terms) {
+              document
+                .getElementById("contactTermsError")
+                .classList.add("show");
+              isValid = false;
+            } else {
+              document
+                .getElementById("contactTermsError")
+                .classList.remove("show");
+            }
+
+            // If valid, show success message and reset form
+            if (isValid) {
+              const submitBtn = document.getElementById("contactSubmitBtn");
+              submitBtn.classList.add("loading");
+
+              // Simulate API call
+              setTimeout(() => {
+                submitBtn.classList.remove("loading");
+                document.getElementById("contactSuccess").classList.add("show");
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                  document
+                    .getElementById("contactSuccess")
+                    .classList.remove("show");
+                }, 5000);
+              }, 1500);
+            }
+          });
+        }
+
+        // ===== Real-time validation =====
+        // Add input event listeners for real-time validation
+        const inputs = document.querySelectorAll("input, select, textarea");
+        inputs.forEach((input) => {
+          input.addEventListener("input", function () {
+            if (this.classList.contains("error")) {
+              this.classList.remove("error");
+            }
+          });
+        });
+
+        // ===== Smooth scroll for anchor links =====
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (href !== "#" && href.length > 1) {
+              e.preventDefault();
+              const target = document.querySelector(href);
+              if (target) {
+                target.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
+            }
+          });
+        });
+
+        // ===== File input validation =====
+        const fileInput = document.getElementById("attachment");
+        if (fileInput) {
+          fileInput.addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+              const fileSize = file.size / 1024 / 1024; // in MB
+              const fileType = file.type;
+
+              if (fileSize > 5) {
+                alert("File size must be less than 5MB");
+                this.value = "";
+              }
+
+              const allowedTypes = [
+                "application/pdf",
+                "application/msword",
+                "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                "image/jpeg",
+                "image/png",
+              ];
+              if (!allowedTypes.includes(fileType)) {
+                alert(
+                  "File type not allowed. Please upload PDF, DOC, DOCX, JPG, or PNG",
+                );
+                this.value = "";
+              }
+            }
+          });
+        }
+
+        // ===== Set minimum date for pickup date =====
+        const dateInput = document.getElementById("pickupDate");
+        if (dateInput) {
+          const today = new Date().toISOString().split("T")[0];
+          dateInput.setAttribute("min", today);
+        }
+      });
+    </script>
+  </body>
+</html>
