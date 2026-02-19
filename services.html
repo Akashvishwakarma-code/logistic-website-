@@ -27,9 +27,9 @@
       <div class="container header-container">
         <div class="logo-container">
           <div class="logo">
-            <img src="image.png" alt="logo" />
+            <img src="image.png" alt="Vayuraaj Logistics Logo" />
           </div>
-          <div class="logo-text"><span>vayuraaj </span> Logistics</div>
+          <div class="logo-text"><span>vayuraaj</span> Logistics</div>
         </div>
 
         <div class="nav-container">
@@ -38,25 +38,25 @@
 
             <div class="dropdown">
               <div class="dropdown-toggle">
-                <a href="#services"
+                <a href="services.html"
                   >Services <i class="fas fa-chevron-down"></i
                 ></a>
               </div>
               <div class="dropdown-menu">
                 <a href="services.html">All Services</a>
-                <a href="#freight">Freight Services</a>
-                <a href="#transport">Transport Services</a>
-                <a href="#logistics">Logistics Services</a>
+                <a href="services.html#freight">Freight Services</a>
+                <a href="services.html#transport">Transport Services</a>
+                <a href="services.html#logistics">Logistics Services</a>
               </div>
             </div>
 
             <a href="about-us.html">About Us</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="active">Contact</a>
           </nav>
 
           <a href="contact.html#get-quote" class="btn">Get Quote</a>
 
-          <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
             <i class="fas fa-bars"></i>
           </button>
         </div>
@@ -396,35 +396,115 @@
     </footer>
 
     <script>
-      // Mobile menu toggle
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-      const navLinks = document.getElementById("navLinks");
+      // Main JavaScript File
 
-      mobileMenuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
-          ? '<i class="fas fa-times"></i>'
-          : '<i class="fas fa-bars"></i>';
-      });
+      // Wait for DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // ===== Mobile Menu Toggle =====
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const navLinks = document.getElementById("navLinks");
 
-      // Close mobile menu when clicking a link
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        });
-      });
-
-      // Header scroll effect
-      const header = document.getElementById("header");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          header.style.padding = "15px 0";
-          header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
-        } else {
-          header.style.padding = "20px 0";
-          header.style.boxShadow = "0 2px 15px rgba(0,0,0,0.05)";
+        if (mobileMenuBtn) {
+          mobileMenuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
+              ? '<i class="fas fa-times"></i>'
+              : '<i class="fas fa-bars"></i>';
+          });
         }
+
+        // ===== Close mobile menu when clicking a link =====
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            if (mobileMenuBtn) {
+              mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+          });
+        });
+
+        // ===== Mobile Dropdown Toggle =====
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", (e) => {
+            if (window.innerWidth <= 992) {
+              e.preventDefault();
+              const dropdown = toggle.closest(".dropdown");
+              dropdown.classList.toggle("active");
+            }
+          });
+        });
+
+        // ===== Header Scroll Effect =====
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+
+        // ===== Scroll Animation Observer =====
+        const scrollAnimations = () => {
+          const observerOptions = {
+            root: null,
+            rootMargin: "0px 0px -100px 0px",
+            threshold: 0.1,
+          };
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+              }
+            });
+          }, observerOptions);
+
+          // Observe all elements with animation classes
+          const animatedElements = document.querySelectorAll(
+            ".fade-up, .slide-left, .slide-right, .zoom-in, .blur-in, .rotate-in",
+          );
+
+          animatedElements.forEach((el) => observer.observe(el));
+        };
+
+        // Initialize scroll animations
+        scrollAnimations();
+
+        // ===== Smooth Scroll for Anchor Links =====
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+
+            if (href !== "#" && href.length > 1) {
+              e.preventDefault();
+
+              const targetElement = document.querySelector(href);
+
+              if (targetElement) {
+                targetElement.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
+            }
+          });
+        });
+
+        // ===== Active Link Highlighting =====
+        const currentLocation = window.location.pathname;
+        const navLinks_list = document.querySelectorAll(".nav-links a");
+
+        navLinks_list.forEach((link) => {
+          const linkPath = link.getAttribute("href");
+
+          if (currentLocation.includes(linkPath) && linkPath !== "#") {
+            link.classList.add("active");
+          }
+        });
       });
     </script>
   </body>

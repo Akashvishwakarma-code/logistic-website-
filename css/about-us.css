@@ -243,11 +243,23 @@ header.scrolled {
   display: none;
   background: none;
   border: none;
-  font-size: 24px;
-  color: var(--dark);
+  font-size: 28px;
+  color: #2e3a2e; /* Changed from white to dark color */
   cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  border-radius: 8px;
 }
 
+.mobile-menu-btn:hover {
+  color: var(--primary);
+  background: rgba(46, 125, 50, 0.1);
+}
+
+header.scrolled .mobile-menu-btn {
+  color: #2e3a2e; /* Keep consistent color */
+}
 /* ===== Page Hero ===== */
 .page-hero {
   background:
@@ -656,57 +668,117 @@ footer {
   transition-duration: 1.2s;
 }
 
-/* ===== Responsive Design ===== */
-@media (max-width: 992px) {
+@media screen and (max-width: 992px) {
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2e3a2e; /* Ensure button is visible */
+    background: transparent;
+  }
+
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--white);
+    display: flex !important; /* Override any hiding issues */
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 400px;
+    height: 100vh;
+    background: white;
     flex-direction: column;
-    padding: 20px;
-    box-shadow: var(--shadow-md);
-    gap: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 100px 30px 40px;
+    gap: 15px;
+    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 40px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
     z-index: 1000;
+    margin: 0; /* Reset any margins */
+    list-style: none;
   }
 
   .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #2e3a2e; /* Ensure text is visible */
+    border-bottom: 1px solid rgba(46, 125, 50, 0.1);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+
+  /* Mobile Dropdown Styles */
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(46, 125, 50, 0.1);
   }
 
-  .mobile-menu-btn {
-    display: block;
+  .dropdown-toggle a {
+    border-bottom: none;
+    padding: 0;
+    width: auto;
   }
 
-  /* Mobile Dropdown */
   .dropdown-menu {
     position: static;
+    transform: none;
     opacity: 1;
     visibility: visible;
-    transform: none;
     box-shadow: none;
-    padding: 10px 0 10px 20px;
+    background: rgba(46, 125, 50, 0.03);
+    border-radius: 12px;
+    margin: 10px 0 10px 20px;
+    padding: 10px 0;
     display: none;
-    background-color: var(--light);
-    margin-top: 10px;
+    border: 1px solid rgba(46, 125, 50, 0.1);
+    width: calc(100% - 20px);
   }
 
   .dropdown.active .dropdown-menu {
     display: block;
   }
 
-  .dropdown-toggle a {
-    pointer-events: auto;
+  .dropdown-menu a {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(46, 125, 50, 0.05);
   }
 
-  .page-hero h1 {
-    font-size: 42px;
+  .dropdown-menu a:last-child {
+    border-bottom: none;
   }
 
-  .mission-statement h2 {
-    font-size: 36px;
+  .dropdown-toggle i {
+    transition: transform 0.3s ease;
+    color: #2e3a2e;
+  }
+
+  .dropdown.active .dropdown-toggle i {
+    transform: rotate(180deg);
+  }
+
+  /* Hide the Get Quote button if it exists in desktop view */
+  .btn.get-quote-btn {
+    display: none;
   }
 }
 
