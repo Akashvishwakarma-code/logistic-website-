@@ -721,7 +721,7 @@ textarea.error {
 
   /* Mobile menu button */
   .mobile-menu-btn {
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     background: none;
