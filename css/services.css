@@ -337,12 +337,17 @@ header.scrolled .logo-text {
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   border: 1px solid rgba(0, 0, 0, 0.05);
+  text-decoration: none;
 }
 
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: var(--primary-light);
+}
+.service-features li {
+  list-style: none;
+  padding-left: 0;
 }
 
 .service-image {
