@@ -72,6 +72,18 @@ section {
   letter-spacing: 0.5px;
 }
 
+.mobile-menu-btn {
+  display: none; /* Hidden on PC by default */
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #2e3a2e;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
 .btn:hover {
   background-color: var(--primary-dark);
   transform: translateY(-3px);
